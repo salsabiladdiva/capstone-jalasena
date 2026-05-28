@@ -1,0 +1,356 @@
+/* ================================================
+   JALASENA - Tutorial Page Styles (CSS Module)
+   ================================================ */
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
+/* Header */
+.header {
+  text-align: center;
+  margin-bottom: 80px;
+  animation: fadeInUp 0.6s ease;
+}
+
+.headerContent {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: var(--font-size-5xl);
+  font-weight: 900;
+  color: var(--color-white);
+  margin-bottom: 16px;
+  letter-spacing: 1px;
+}
+
+.subtitle {
+  font-size: var(--font-size-lg);
+  color: var(--color-gray-400);
+  line-height: 1.8;
+}
+
+/* Section Styling */
+.sectionTitle {
+  font-size: var(--font-size-3xl);
+  font-weight: 800;
+  color: var(--color-white);
+  margin-bottom: 40px;
+  text-align: center;
+  position: relative;
+  padding-bottom: 16px;
+}
+
+.sectionTitle::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: var(--color-accent);
+  border-radius: 2px;
+}
+
+/* Features Section */
+.featuresSection {
+  margin-bottom: 80px;
+}
+
+.featuresGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 24px;
+}
+
+.featureCard {
+  background: linear-gradient(135deg, var(--color-gray-800), var(--color-gray-900));
+  border: 1px solid var(--color-gray-700);
+  border-radius: var(--radius-lg);
+  padding: 32px 24px;
+  text-align: center;
+  transition: all var(--transition-normal);
+  animation: fadeInUp 0.6s ease both;
+}
+
+.featureCard:hover {
+  transform: translateY(-8px);
+  border-color: var(--color-accent);
+  box-shadow: 0 20px 40px rgba(255, 71, 29, 0.15);
+}
+
+.featureIcon {
+  font-size: 48px;
+  margin-bottom: 16px;
+}
+
+.featureTitle {
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+  color: var(--color-white);
+  margin: 0 0 12px 0;
+}
+
+.featureDesc {
+  font-size: var(--font-size-sm);
+  color: var(--color-gray-400);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Steps Section */
+.stepsSection {
+  margin-bottom: 80px;
+}
+
+.stepsContainer {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.stepCard {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 40px;
+  position: relative;
+  animation: fadeInUp 0.6s ease both;
+}
+
+.stepCard:nth-child(1) { animation-delay: 0.1s; }
+.stepCard:nth-child(2) { animation-delay: 0.2s; }
+.stepCard:nth-child(3) { animation-delay: 0.3s; }
+.stepCard:nth-child(4) { animation-delay: 0.4s; }
+.stepCard:nth-child(5) { animation-delay: 0.5s; }
+.stepCard:nth-child(6) { animation-delay: 0.6s; }
+
+.stepNumber {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stepIcon {
+  font-size: 48px;
+  position: absolute;
+  z-index: 2;
+}
+
+.stepCount {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  width: 32px;
+  height: 32px;
+  background: var(--color-accent);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: var(--font-size-sm);
+}
+
+.stepConnector {
+  position: absolute;
+  left: 50px;
+  top: 100px;
+  width: 2px;
+  height: 40px;
+  background: linear-gradient(180deg, var(--color-accent), transparent);
+}
+
+.stepContent {
+  flex: 1;
+  background: linear-gradient(135deg, var(--color-gray-800), var(--color-gray-900));
+  border: 1px solid var(--color-gray-700);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+}
+
+.stepTitle {
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+  color: var(--color-white);
+  margin: 0 0 12px 0;
+}
+
+.stepDesc {
+  font-size: var(--font-size-sm);
+  color: var(--color-gray-400);
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* FAQ Section */
+.faqSection {
+  margin-bottom: 80px;
+}
+
+.faqGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.faqItem {
+  background: linear-gradient(135deg, var(--color-gray-800), var(--color-gray-900));
+  border: 1px solid var(--color-gray-700);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  transition: all var(--transition-normal);
+  animation: fadeInUp 0.6s ease both;
+}
+
+.faqItem:nth-child(odd) { animation-delay: 0.1s; }
+.faqItem:nth-child(even) { animation-delay: 0.2s; }
+
+.faqItem:hover {
+  border-color: var(--color-accent);
+  box-shadow: 0 10px 30px rgba(255, 71, 29, 0.1);
+}
+
+.faqQuestion {
+  font-size: var(--font-size-md);
+  font-weight: 700;
+  color: var(--color-white);
+  margin: 0 0 12px 0;
+}
+
+.faqAnswer {
+  font-size: var(--font-size-sm);
+  color: var(--color-gray-400);
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* CTA Section */
+.ctaSection {
+  background: linear-gradient(135deg, var(--color-accent), #e63e17);
+  border-radius: var(--radius-lg);
+  padding: 60px 40px;
+  text-align: center;
+  margin-top: 80px;
+  animation: fadeInUp 0.6s ease 0.7s both;
+}
+
+.ctaTitle {
+  font-size: var(--font-size-4xl);
+  font-weight: 900;
+  color: white;
+  margin: 0 0 16px 0;
+}
+
+.ctaText {
+  font-size: var(--font-size-lg);
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0 0 32px 0;
+  line-height: 1.6;
+}
+
+.ctaButtons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btnPrimary,
+.btnSecondary {
+  padding: 14px 32px;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-md);
+  font-weight: 700;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-family: var(--font-primary);
+}
+
+.btnPrimary {
+  background: white;
+  color: var(--color-accent);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btnPrimary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.btnSecondary {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 2px solid white;
+}
+
+.btnSecondary:hover {
+  background: white;
+  color: var(--color-accent);
+  transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    padding: 40px 16px;
+  }
+
+  .title {
+    font-size: var(--font-size-3xl);
+  }
+
+  .sectionTitle {
+    font-size: var(--font-size-2xl);
+  }
+
+  .stepCard {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .stepNumber {
+    width: 80px;
+    height: 80px;
+  }
+
+  .stepIcon {
+    font-size: 40px;
+  }
+
+  .stepConnector {
+    display: none;
+  }
+
+  .ctaSection {
+    padding: 40px 24px;
+  }
+
+  .ctaTitle {
+    font-size: var(--font-size-2xl);
+  }
+
+  .ctaButtons {
+    flex-direction: column;
+  }
+
+  .btnPrimary,
+  .btnSecondary {
+    width: 100%;
+    justify-content: center;
+  }
+}

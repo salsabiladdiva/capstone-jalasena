@@ -1,0 +1,297 @@
+/* ================================================
+   JALASENA - Landing Page Styles (CSS Module)
+   ================================================ */
+
+/* --- Hero Section --- */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 600px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: default;
+}
+
+/* Background gradient laut */
+.hero__background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+/* Overlay gradient gelap */
+.hero__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    rgba(33, 33, 33, 0.3) 0%,
+    rgba(10, 22, 40, 0.2) 40%,
+    rgba(10, 22, 40, 0.3) 70%,
+    rgba(33, 33, 33, 0.7) 100%
+  );
+  z-index: 2;
+}
+
+/* Scan lines vertikal (terinspirasi cargokite.com) */
+.hero__scanlines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    90deg,
+    transparent,
+    transparent 80px,
+    rgba(45, 97, 135, 0.07) 80px,
+    rgba(45, 97, 135, 0.07) 81px
+  );
+}
+
+/* Konten hero - teks dan tombol */
+.hero__content {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  padding: 32px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 1s ease;
+}
+
+.hero__contentVisible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Judul "JALASENA" - bold dan besar */
+.hero__title {
+  font-size: var(--font-size-hero);
+  font-weight: 900;
+  letter-spacing: 12px;
+  text-transform: uppercase;
+  color: var(--color-white);
+  text-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+  margin-bottom: 8px;
+  line-height: 1.1;
+}
+
+/* Garis accent di bawah judul */
+.hero__title_accent {
+  display: block;
+  width: 60px;
+  height: 4px;
+  background-color: var(--color-accent);
+  margin: 16px auto;
+  border-radius: 9999px;
+}
+
+/* Subtitle deskripsi */
+.hero__subtitle {
+  font-size: var(--font-size-lg);
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.85);
+  max-width: 500px;
+  margin: 0 auto 48px;
+  line-height: 1.7;
+  letter-spacing: 0.5px;
+}
+
+/* Container tombol CTA */
+.hero__cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+/* --- Satelit --- */
+.satellite {
+  position: absolute;
+  z-index: 50;
+  pointer-events: none;
+  will-change: transform;
+}
+
+.satellite__body {
+  width: 120px;
+  height: 80px;
+  position: relative;
+  filter: drop-shadow(0 4px 20px rgba(255, 71, 29, 0.3));
+}
+
+.satellite__panel {
+  animation: solarRotate 4s ease-in-out infinite;
+  transform-origin: center;
+}
+
+.satellite__glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 150px;
+  height: 150px;
+  background: radial-gradient(circle, rgba(255, 71, 29, 0.15) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: pulse 3s ease-in-out infinite;
+}
+
+/* --- Kapal --- */
+.boat {
+  position: absolute;
+  bottom: 8%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 8;
+  animation: float 4s ease-in-out infinite;
+}
+
+.boat__body {
+  width: 140px;
+  height: auto;
+  filter: drop-shadow(0 8px 25px rgba(0, 0, 0, 0.4));
+}
+
+.boat__wake {
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 30px;
+  overflow: hidden;
+}
+
+.boat__wake-line {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.4) 30%, rgba(255,255,255,0.6) 50%, rgba(255,255,255,0.4) 70%, transparent 100%);
+  border-radius: 9999px;
+  animation: wake 2s ease-out infinite;
+}
+
+.boat__wake-line:nth-child(2) {
+  bottom: 8px;
+  width: 70%;
+  left: 15%;
+  animation-delay: 0.3s;
+  opacity: 0.7;
+}
+
+.boat__wake-line:nth-child(3) {
+  bottom: 16px;
+  width: 40%;
+  left: 30%;
+  animation-delay: 0.6s;
+  opacity: 0.5;
+}
+
+.boat__reflection {
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 40px;
+  background: radial-gradient(ellipse, rgba(255,255,255,0.1) 0%, transparent 70%);
+}
+
+/* --- Scroll Indicator --- */
+.hero__scroll_indicator {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  animation: fadeIn 1s ease 1.5s both;
+}
+
+.hero__scroll_indicator span {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.5);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.scroll-mouse {
+  width: 24px;
+  height: 38px;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-radius: 12px;
+  position: relative;
+}
+
+.scroll-mouse__wheel {
+  width: 4px;
+  height: 8px;
+  background-color: var(--color-accent);
+  border-radius: 9999px;
+  position: absolute;
+  top: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: scrollWheel 2s ease-in-out infinite;
+}
+
+@keyframes scrollWheel {
+  0% { opacity: 1; transform: translateX(-50%) translateY(0); }
+  100% { opacity: 0; transform: translateX(-50%) translateY(16px); }
+}
+
+@keyframes solarRotate {
+  0%, 100% { transform: rotate(-5deg); }
+  50% { transform: rotate(5deg); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateX(-50%) translateY(0px); }
+  50% { transform: translateX(-50%) translateY(-15px); }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+  50% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.7; }
+}
+
+@keyframes wake {
+  0% { opacity: 0.6; transform: scaleX(1); }
+  100% { opacity: 0; transform: scaleX(2); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero__title { letter-spacing: 6px; }
+  .satellite__body { width: 80px; height: 55px; }
+  .boat__body { width: 100px; }
+  .hero__cta { flex-direction: column; }
+}
